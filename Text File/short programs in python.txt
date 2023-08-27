@@ -1,0 +1,285 @@
+# Adding two numbers
+
+numbers1 = float(input("Enter first number: "))
+numbers2 = float(input("Enter second number: "))
+
+sum = numbers1 + numbers2
+print(f"The sum of {numbers1} and {numbers2} is {sum}")
+print("The sum of {0} and {1} is {2}".format(numbers1, numbers2, sum))
+-----------------------------------------------------------------------------------------
+# Sqrt of a number
+
+number = float(input("Enter the number: "))
+
+number_sqrt = number ** .5
+print(f"The square root of {number} is {number_sqrt}")
+print("The square root of {0} is {1}".format(number, number_sqrt))
+print("The square root of %0.3f is %0.3f" % (number, number_sqrt))
+---------------------------------------------------------------------------------------------
+#Finding Armstrong Number:
+
+lower = 100
+upper = 2000
+
+print(f"Armstrong numbers between {lower} & {upper}:")
+for num in range(lower, upper + 1):
+    order = len(str(num))
+
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+
+    if num == sum:
+        print(num)
+
+print("\n")
+number = int(input("Enter any positive number: \n"))
+
+
+def checkArmstrong(num):
+    if num in range(1, 10):
+        return True
+
+    order = len(str(number))
+
+    sum = 0
+    original = num
+
+    while num > 0:
+        digit = num % 10
+        sum += digit ** order
+        num //= 10
+    if sum == original:
+        return True
+    return True
+
+
+if checkArmstrong(number):
+    print(f"\n{number} is Armstrong")
+else:
+    print(f"\n{number} is not Armstrong")
+-------------------------------------------------------------------------
+#Sum of natural numbers:
+num = int(input("Enter a natural number: "))
+
+if num < 0:
+    print("Enter a positive number: ")
+else:
+    sum = 0
+    while num > 0:
+        sum += num
+        num -= 1
+    print(f"The sum is {sum}")
+-----------------------------------------------------------------------
+# Power of 2:
+terms = int(input("How many terms? "))
+result = list(map(lambda x: 2 ** x, range(terms)))
+print(f"Total terms are: {terms}")
+for i in range(terms):
+    print(f"2 raised to the power of {i} is {result[i]}")
+------------------------------------------------------------------------
+# Numbers divisible in list by another number:
+my_list = [12, 65, 54, 39, 102, 339, 221]
+
+div=int(input("Enter divider: "))
+result = list(filter(lambda x: x % div == 0, my_list))
+print(f"Numbers divisible by {div} are {result}")
+------------------------------------------------------------------------
+#Coverting decimal to other number systems:
+dec=int(input("Enter decimal value: "))
+
+print(f"\nOther value of {dec} is:")
+print(f"In binary: {bin(dec)}")
+print(f"In octal: {oct(dec)}")
+print(f"In hexadecimal: {hex(dec)}")
+-------------------------------------------------------------------------
+# ASCII value of a character:
+
+character = input("Enter a character value: ")
+for char in character:
+        print(f"ASCII value of {character} is: {ord(character)}")
+
+
+string = input("\nEnter a string value: ")
+for str in string:
+        print(f"ASCII value of {str} is: {ord(str)}")
+---------------------------------------------------------------------
+# ASCII value of a character:
+
+character = input("Enter a character value: ")
+for char in character:
+        print(f"ASCII value of {character} is: {ord(character)}")
+
+
+string = input("\nEnter a string value: ")
+for str in string:
+        print(f"ASCII value of {str} is: {ord(str)}")
+------------------------------------------------------------------------
+# Finding HCF or GCD of two numbers:
+
+def compute_gcd(x, y):
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller + 1):
+        if (x % i == 0) and (y % i == 0):
+            gcd = i
+    return gcd
+
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print(f"The GCD of the numbers are: {compute_gcd(num1, num2)}")
+------------------------------------------------------------------------
+# Finding LCD of two numbers:
+def compute_lcd(x, y):
+    if x > y:
+        greater = x
+    else:
+        greater = y
+    while (True):
+        if (greater % x == 0) and (greater % y == 0):
+            lcm = greater
+            break
+        greater += 1
+    return lcm
+
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print(f"LCD of {num1} and {num2} are: {compute_lcd(num1, num2)}")
+------------------------------------------------------------------------------
+# Finding the factors of a number:
+def factors(x):
+    print(f"The factors of {x} are: ")
+    for i in range(1, x + 1):
+        if x % i == 0:
+            print(i)
+
+num = int(input("Enter number: "))
+factors(num)
+------------------------------------------------------------------------------
+# Making a simple calculator:
+def add(x, y):
+    return x + y
+
+
+def subtract(x, y):
+    return x - y
+
+
+def multiple(x, y):
+    return x * y
+
+
+def divide(x, y):
+    return x / y
+
+
+print("Select Operations you want to perform.")
+print("1.Addition")
+print("2.Substration")
+print("3.Multiplication")
+print("4.Division")
+
+while (True):
+    choice = input("\nEnter your choice (1/2/3/4): ")
+
+    if choice in ("1", "2", "3", "4"):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == "1":
+            print(f"{num1} + {num2} = {add(num1, num2)}")
+            break
+        elif choice == "2":
+            print(f"{num1} - {num2} = {subtract(num1, num2)}")
+            break
+        elif choice == "3":
+            print(f"{num1} * {num2} = {multiple(num1, num2)}")
+            break
+        else:
+            print(f"{num1} / {num2} = {divide(num1, num2)}")
+
+            break
+    else:
+        print("Invalid Input.")
+        break
+---------------------------------------------------------------------------------------------------
+#Shuffle a deck of cards:    
+import itertools, random
+
+deck = list(itertools.product(range(1, 14), ["Spade", "Heart", "Diamond", "Club"]))
+random.shuffle(deck)
+print("You have Received:")
+for i in range(5):
+    print(f"{deck[i][0]} of {deck[i][1]}")
+-------------------------------------------------------------------------------------------
+#Calendar of month & year:
+import calendar
+year=int(input("Enter Year: "))
+mm=int(input("Enter Month: "))
+print(calendar.month(year, mm))
+---------------------------------------------------------------------
+# Fibonacci Series:
+def recur_fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return (recur_fibo(n - 1) + recur_fibo(n - 2))
+
+
+nterms = int(input("Enter your terms: "))
+if nterms <= 0:
+    print("Enter a positive number: ")
+else:
+    print("Fibonacci Sequence: ")
+for i in range(nterms):
+    print(recur_fibo(i), end= " ")
+------------------------------------------------------------------------------
+# Sum of natural numbers using recursion:
+def recur_sum(n):
+    if n <= 1:
+        return n
+    else:
+        return n + recur_sum(n - 1)
+
+
+number = int(input("Enter the natural number you want sum of: "))
+if number <= 0:
+    print("Enter a positive number.")
+else:
+    print(f"The sum of natural number {number} is: {recur_sum(number)}")
+---------------------------------------------------------------------------------------
+# factorial of a number using recursion:
+def recur_fact(n):
+    if n == 1:
+        return n
+    else:
+        return n * recur_fact(n - 1)
+
+
+number = int(input("Enter the natural number you want factorial of: "))
+if number < 0:
+    print("Sorry! factorial doesn't exist for negative numbers.")
+elif number == 0:
+    print("The factorial of 0 is 1.")
+else:
+    print(f"The factorial of natural number {number} is: {recur_fact(number)}")
+---------------------------------------------------------------------------------------------
+# Converting Decimal to binary using recursion:
+def convertToBinary(n):
+    if n == 0:
+        return
+    else:
+        convertToBinary(n // 2)
+        print(n % 2, end="")
+
+
+decimal = int(input("Enter decimal value: "))
+convertToBinary(decimal)
+----------------------------------------------------------------------------

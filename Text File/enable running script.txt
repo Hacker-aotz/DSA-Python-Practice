@@ -1,0 +1,16 @@
+To enable running scripts in your Windows 11 or Windows 10, just follow these simple steps
+
+Step 1 
+Go to your start menu and type “cmd”. Right click on “Command Promt” and select run as administrator.
+
+Step 2 
+Type in the first command promt “Get-ExecutionPolicy -List” and hit Enter.
+
+Step 3 
+Type in the second command “Set-ExecutionPolicy Unrestricted” and hit Enter again.
+
+Step 4 
+Among the following options shown select “Y” and hit Enter.
+
+Step 5 
+Now type in the third and final command “Set-ExecutionPolicy Unrestricted -Force” and hit Enter.
