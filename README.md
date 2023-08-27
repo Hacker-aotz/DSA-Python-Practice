@@ -1,1 +1,2 @@
-python project with DSA.
+# python project with DSA.
+# Algorithm
